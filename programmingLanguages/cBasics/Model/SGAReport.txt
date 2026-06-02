@@ -1,0 +1,14 @@
+                    Simple Genetic Algorithm - SGA
+________________________________________________________________________________
+    SGA Parameters:
+Population Size(nPopSize) = 10
+Chromosome Length(nChromLen) = 5
+Maximum of Generation(nMaxGen) = 10
+Crossover Probability(fPc) = 0.250000
+Mutation Probability(fPm) = 0.010000
+________________________________________________________________________________
+Initial Population Average Fitness = 1.056157
+Initial Population Max Fitness = 1.888456
+Initial Population Min Fitness = 0.138506
+Initial Population Sum Fitness = 10.561567
+________________________________________________________________________________
