@@ -21,19 +21,19 @@ The repository is organized into five main pillars (extra pillars to AI, Git and
 * **Best Practices:** Code organization, object-oriented programming (OOP) principles, testing, and writing clean, maintainable code.
 * **Applications:** How to build, test, and deploy applications, specially with proper tools like Docker.
 
-### 3. ✍️ LaTeX
-* **Document Design:** Templates and syntax for academic papers, technical reports, and structured book preparation.
-* **Advanced Features:** Managing multi-file documents, cross-referencing, handling multilingual support, and typesetting complex mathematical formulas.
-
-### 4. ⚙️ Operating Systems
+### 3. ⚙️ Operating Systems
 
   * 🐧 Linux
        * **Command Line Interface (CLI):** Essential terminal commands (`grep`, `awk`, `find`), file system navigation, and permissions.
        * **Environment & Productivity:** Text editing with Vim, shell scripting, automation, SSH key identity management, and system configuration.
     
-   ### 🪟 Windows
-   * **Development Environment:** Configuring WSL (Windows Subsystem for Linux), PowerShell commands, and environment variables.
-   * **System Tools:** Command-line configurations, package management (Winget), and cross-platform compatibility tips.
+  * 🪟 Windows
+       * **Development Environment:** Configuring WSL (Windows Subsystem for Linux), PowerShell commands, and environment variables.
+       * **System Tools:** Command-line configurations, package management (Winget), and cross-platform compatibility tips.
+
+### 4. ✨ Artificial Intelligence
+* __Core capabilities:__ Problem solving according to the type of AI (e.g., LLM wrapper, computer vision model, fine-tuning, etc.).
+* __Model Architecture:__ Base models (e.g., Llama 3, GPT-4, Stable Diffusion) and custom architectures.
 
 ---
 
@@ -115,174 +115,3 @@ Regex is a __declarative__ way of processing text. Instead of writing 50 lines o
 __Warning:__ Regex can become "write-only" code (hard to read later). There is a famous saying in CS: *"Some people, when confronted with a problem, think 'I know, I'll use regular expressions.' Now they have two problems."*
 
 ---
-
-## Adding Portuguese to latex files
-
-To add Portuguese support to a LaTeX document, you primarily use the `babel` package. This ensures that structural elements (like "Contents" becoming "Sumário" and "Chapter" becoming "Capítulo") are translated and that hyphenation rules are applied correctly.
-
-### 1. The Standard Approach
-
-Add the following to your LaTeX preamble:
-
-```latex
-\usepackage[portuguese]{babel}
-
-```
-
-If you specifically want __Brazilian Portuguese__, use:
-
-```latex
-\usepackage[brazilian]{babel}
-
-```
-
-### 2. Supporting Special Characters
-
-Portuguese uses many diacritics (á, é, í, õ, ç). To ensure these render correctly without having to use cumbersome codes like `\'a` or `\~o`, you should also include font and input encoding packages:
-
-```latex
-\usepackage[T1]{fontenc}    % Correct font encoding for accents
-\usepackage[utf8]{inputenc} % Allows typing special characters directly
-\usepackage[portuguese]{babel}
-
-```
-
-### 3. Handling Multiple Languages
-
-If you are writing a document in both English and Portuguese, you can list both. __The last language in the list will be the main language of the document.__
-
-```latex
-\usepackage[english, portuguese]{babel}
-
-```
-
-To switch between them in the text:
-
-* Use `\selectlanguage{english}` to change the language for the rest of the document.
-* Use `\foreignlanguage{english}{text here}` for short phrases.
-
-### 4. Adjusting Quotation Marks
-
-In Portuguese, it is common to use guillemets (« ») or standard curly quotes. To handle this automatically, many users add the `csquotes` package:
-
-```latex
-\usepackage[portuguese]{babel}
-\usepackage{csquotes}
-
-```
-
-### Summary of a Basic Template
-
-Here is how your minimal Portuguese document should look:
-
-```latex
-\documentclass{article}
-
-% Language and Font Settings
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[portuguese]{babel}
-
-\begin{titlepage}
-    \title{Meu Documento em Português}
-    \author{Seu Nome}
-\end{titlepage}
-
-\begin{document}
-\maketitle
-
-\section{Introdução}
-Este documento agora suporta hifenização e termos automáticos em português.
-
-\end{document}
-
-```
-
----
-
-## Book class in LaTeX
-
-In LaTeX, the standard `book` class provides a structured way to divide your document into logical sections. These commands handle page numbering (switching between Roman and Arabic numerals) and control whether certain elements (like the table of contents) are automatically generated.
-
-The structure is typically divided into three main "matters":
-
-### 1. Front Matter (`\frontmatter`)
-
-This section contains the introductory material.
-
-* __Page Numbering:__ Automatically switches to lowercase __Roman numerals__ (i, ii, iii).
-* __Chapter Behavior:__ Chapters here are not numbered, but they will still appear in the Table of Contents.
-
-__Typical elements included:__
-
-* Title page (`\maketitle`)
-* Dedication
-* Table of Contents (`\tableofcontents`)
-* Preface or Foreword
-
-### 2. Main Matter (`\mainmatter`)
-
-This is the core of your book where the actual content resides.
-
-* __Page Numbering:__ Resets the page counter to __1__ and switches to __Arabic numerals__ (1, 2, 3).
-* __Structure Hierarchy:__ This is where you use the standard heading commands.
-
-| Command | Level | Description |
-| --- | --- | --- |
-| `\part{}` | -1 | Divisions for very large books (doesn't reset chapter numbering). |
-| `\chapter{}` | 0 | The primary division in a book class. |
-| `\section{}` | 1 | Sub-divisions within a chapter. |
-| `\subsection{}` | 2 | Further sub-divisions. |
-
-### 3. Back Matter (`\backmatter`)
-
-This section is for the reference material at the end of the book.
-
-* __Page Numbering:__ Continues the Arabic numerals from the main matter.
-* __Chapter Behavior:__ Chapters are __not numbered__, similar to the front matter.
-
-__Typical elements included:__
-
-* Appendix (usually preceded by the `\appendix` command)
-* Bibliography / References
-* Glossary
-* Index
-
-### Basic Code Template
-
-Here is how these parts look when assembled in a `.tex` file:
-
-```latex
-\documentclass{book}
-
-\begin{document}
-
-\frontmatter
-\title{The Great Anthology}
-\author{Jane Doe}
-\maketitle
-\tableofcontents
-
-\chapter{Preface}
-This is where the author explains why they wrote the book.
-
-\mainmatter
-\part{The Beginning}
-\chapter{First Discovery}
-\section{The Lab Results}
-Actual content goes here.
-
-\backmatter
-\chapter{Conclusion}
-Final thoughts on the research.
-
-\end{document}
-
-```
-
-### Key Differences: `book` vs `report`
-
-While both classes support chapters, only the `book` class natively supports the `\frontmatter`, `\mainmatter`, and `\backmatter` commands. The `report` class treats all chapters as part of a single continuous flow.
-
----
-
