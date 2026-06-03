@@ -19,18 +19,21 @@ The repository is organized into five main pillars (extra pillars to AI, Git and
 ### 2. 💻 Programming Languages
 * **Syntax & Paradigms:** Deep dives into language-specific features, syntax, memory management, and compilation/interpretation processes.
 * **Best Practices:** Code organization, object-oriented programming (OOP) principles, testing, and writing clean, maintainable code.
+* **Applications:** How to build, test, and deploy applications, specially with proper tools like Docker.
 
 ### 3. ✍️ LaTeX
 * **Document Design:** Templates and syntax for academic papers, technical reports, and structured book preparation.
 * **Advanced Features:** Managing multi-file documents, cross-referencing, handling multilingual support, and typesetting complex mathematical formulas.
 
-### 4. 🐧 Linux
-* **Command Line Interface (CLI):** Essential terminal commands (`grep`, `awk`, `find`), file system navigation, and permissions.
-* **Environment & Productivity:** Text editing with Vim, shell scripting, automation, SSH key identity management, and system configuration.
+### 4. ⚙️ Operating Systems
 
-### 5. 🪟 Windows
-* **Development Environment:** Configuring WSL (Windows Subsystem for Linux), PowerShell commands, and environment variables.
-* **System Tools:** Command-line configurations, package management (Winget), and cross-platform compatibility tips.
+  * 🐧 Linux
+       * **Command Line Interface (CLI):** Essential terminal commands (`grep`, `awk`, `find`), file system navigation, and permissions.
+       * **Environment & Productivity:** Text editing with Vim, shell scripting, automation, SSH key identity management, and system configuration.
+    
+   ### 🪟 Windows
+   * **Development Environment:** Configuring WSL (Windows Subsystem for Linux), PowerShell commands, and environment variables.
+   * **System Tools:** Command-line configurations, package management (Winget), and cross-platform compatibility tips.
 
 ---
 
