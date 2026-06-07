@@ -37,8 +37,8 @@ disp('= = = = = Removing folders and files completed = = = = =')
     matlabBasics/
     ├── 📁 SignalsAndSystems/         # DSP and linear systems analysis tools
     │   └── 📄 discrete_step_analysis.m # Discrete-time step response analysis script
+    ├── 📁 applications/              # Simple scripts to test mathematical concepts and file operations
     ├── 📁 logo/                      # Visual branding and repository media assets
-    ├── 📁 tests/                     # Validation, regression, and script test suites
     ├── 📄 LICENSE                    # Legal licensing text (MIT License)
     └── 📄 README.md                  # Project overview and execution manual
 
