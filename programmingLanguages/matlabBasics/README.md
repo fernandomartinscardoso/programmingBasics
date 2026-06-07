@@ -44,4 +44,4 @@ disp('= = = = = Removing folders and files completed = = = = =')
 
 ## ⚖️ License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/fernandomartinscardoso/matlabBasics/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/fernandomartinscardoso/programmingBasics/blob/main/programmingLanguages/matlabBasics/LICENSE) file for details.
