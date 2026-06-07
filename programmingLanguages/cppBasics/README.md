@@ -30,4 +30,4 @@ cppBasics/
 
 ## ⚖️ License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/fernandomartinscardoso/cppBasics/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/fernandomartinscardoso/programmingBasics/blob/main/programmingLanguages/cppBasics/LICENSE) file for details.
