@@ -46,4 +46,4 @@ __Virtual Machines (VMs)__
 
 ## ⚖️ License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/fernandomartinscardoso/dockerBasics/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/fernandomartinscardoso/programmingBasics/blob/main/programmingLanguages/dockerBasics/LICENSE) file for details.
