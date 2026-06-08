@@ -19,7 +19,7 @@ The repository is organized into five main pillars (extra pillars to AI, Git and
 ### 2. 💻 Programming Languages
 * **Syntax & Paradigms:** Deep dives into language-specific features, syntax, memory management, and compilation/interpretation processes.
 * **Best Practices:** Code organization, object-oriented programming (OOP) principles, testing, and writing clean, maintainable code.
-* **Applications:** How to build, test, and deploy applications, specially with proper tools like Docker.
+* **Applications:** How to build, test, and deploy applications, specially with proper tools like Docker. How to track changes in application files and coordinate work using distributed version control system (VCS) like Git.
 
 ### 3. ⚙️ Operating Systems
 
