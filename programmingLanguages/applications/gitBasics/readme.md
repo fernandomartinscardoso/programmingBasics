@@ -28,6 +28,7 @@ Linus Torvalds created Git in April 2005 out of sheer necessity to solve a criti
 
 Little history aside, now Git is the reference, the standard solution to control project versions, and here I am going to share how I use it and what I learnt on daily basis applications.
 
+---
 ### Bash file to update the local repositories with remote repositories
 
 With a little help of Gemini and a lot of patience with the tests, I could define a simple bash file to update reposiories in Linux based systems. The solutions below were tested in Ubuntu Server (Ubuntu 24.04 LTS) with no problems.
@@ -100,6 +101,52 @@ The option 2 worked really well in my system, and here are some details I reques
 * The result: Since `stdout` is already being sent to the `/dev/null` black hole, any error messages (like network timeouts or authentication failures) are also silenced and discarded.
 
 ---
+### Adding a `.gitignore` for Vim backup and temporary files
+
+Vim generates three main types of temporary files that can pollute your `git status`:
+
+- Backup files: End with a tilde (`~`).
+- Swap files: End with `.swp` or `.swo`.
+- Undo files: End with `.un~`. [6, 7]
+
+Main options to create `.gitignore` and add the rules [6]:
+
+#### Option 1: Configure globally
+
+Because Vim files are specific to your personal development environment and not the shared project code, the best practice is to ignore them globally across all your local repositories.
+
+1. Open your terminal.
+2. Create or open a global `.gitignore` file in your home directory:
+   ```bash
+   touch ~/.gitignore_global
+   ```
+3. Open the file and paste the following rules:
+   ```text
+   # Vim temporary, backup, and swap files
+   *~
+   *.swp
+   *.swo
+   [._]*.un~
+   ```
+4. Tell git to use this file globally:
+   ```bash
+   git config --global core.excludesfile ~/.gitignore_global
+   ```
+
+#### Option 2: Configure for a Single Project
+
+If you prefer to apply this strictly to your current project, you can add it directly to that repository's local file.
+
+1. Open the `.gitignore` file at the root of your project directory.
+2. Append the following lines to the bottom of the file (ensuring comments are on their own lines):
+   ```text
+   # Ignore Vim backup and swap files
+   *~
+   *.swp
+   *.swo
+   ```
+
+---
 ## References
 
 [1] [Wikipedia - Git](https://en.wikipedia.org/wiki/Git)
@@ -112,6 +159,10 @@ The option 2 worked really well in my system, and here are some details I reques
 
 [5] [https://www.yellowduck.be](https://www.yellowduck.be/posts/how-to-check-for-remote-changes-and-local-branches-in-git)
 
+[6] [Stackoverflow - Git ignore vim temporary files](https://stackoverflow.com/questions/4824188/git-ignore-vim-temporary-files)
+
+[7] [Github - Add .gitignore rule to ignore temporary files created by vim](https://github.com/google/benchmark/issues/858)
+
 [Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone)
 
 [Badges for README files](https://shields.io/)
@@ -121,4 +172,6 @@ The option 2 worked really well in my system, and here are some details I reques
 [Git Basics Documentation](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
 
 [How to Undo the Last Commit using git reset Command?](https://medium.com/@basecs101/how-to-undo-the-last-commit-using-git-reset-command-latest-f917f5e9c554)
+
+
 
